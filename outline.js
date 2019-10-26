@@ -19,10 +19,57 @@ class Course {
         this.title = title
         this.times = t
     }
+
+    equals(b)
+    {
+        return this.title == b.title
+    }
 }
 
 class Assignment {
-    statuses = ["NotDone","Starting","TurnedIn"]
+    statuses = ["NotDone","Starting","Complete"]
+
+    constructor(duedate,c,title) {
+        this.course = c
+        this.duedate = duedate
+        this.title = title
+        this.status = this.statuses[0]
+    }
+
+    getStatus(){
+        return this.status
+    }
+}
+class Test {
+    statuses = ["NotDone","Starting","Complete"]
+
+    constructor(duedate,c,title) {
+        this.course = c
+        this.duedate = duedate
+        this.title = title
+        this.status = this.statuses[0]
+    }
+
+    getStatus(){
+        return this.status
+    }
+}
+class Project {
+    statuses = ["NotDone","Starting","Complete"]
+
+    constructor(duedate,c,title) {
+        this.course = c
+        this.duedate = duedate
+        this.title = title
+        this.status = this.statuses[0]
+    }
+
+    getStatus(){
+        return this.status
+    }
+}
+class Event {
+    statuses = ["NotDone","Starting","Complete"]
 
     constructor(duedate,c,title) {
         this.course = c
