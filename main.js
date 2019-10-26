@@ -35,7 +35,7 @@ function createWindow() {
 
     setTimeout(() => {
         win.loadFile("index.html")
-    }, 1000)
+    }, 2000)
 }
 
 
