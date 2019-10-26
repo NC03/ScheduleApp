@@ -6,8 +6,7 @@ const fs = require("fs")
 let win
 var data
 
-function fetchData()
-{
+function fetchData() {
     fs.readFile("data.txt", (err, data) => {
         console.log(data)
     })
@@ -17,7 +16,7 @@ function createWindow() {
     win = new BrowserWindow({
         width: 800,
         height: 600,
-        icon:"icon.png"
+        icon: "icon.png"
     })
 
     // console.log(process)
@@ -33,6 +32,10 @@ function createWindow() {
 
         win = null
     })
+
+    setTimeout(() => {
+        win.loadFile("index.html")
+    }, 1000)
 }
 
 
