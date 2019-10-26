@@ -20,10 +20,10 @@ function createWindow() {
         icon:"icon.png"
     })
 
-    console.log(process)
-    win.loadFile('index.html')
+    // console.log(process)
+    win.loadFile('splash.html')
 
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     win.on("ready", function () {
 
