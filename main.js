@@ -16,12 +16,14 @@ function fetchData() {
 
 function createWindow() {
     // fetchData()
+    Menu.setApplicationMenu(null)
 
     win = new BrowserWindow({
         width: 800,
         height: 600,
         icon: "icon.png"
     })
+
 
     // console.log(process)
     console.log(app)
