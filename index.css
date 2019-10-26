@@ -1,0 +1,40 @@
+:root {
+    --color-icon-green: rgb(54, 212, 4);
+    --color-icon-yellow: rgb(247, 175, 37);
+    --color-icon-red: rgb(246, 84, 84);
+    --color-background-blue: rgb(51, 64, 199);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: 8% 92%;
+}
+
+#topnav {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "a b . . . . . c"
+}
+
+#topnav a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: auto;
+}
+
+#topnav a.active {
+    background-color: var(--color-background-blue);
+    font-weight: bold;
+}
+
+#topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}

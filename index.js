@@ -1,7 +1,5 @@
 var assignments = []
 
-console.log(process)
-
 document.addEventListener('DOMContentLoaded', () => {
     var inner = ""
     var count = 1

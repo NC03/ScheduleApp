@@ -15,8 +15,7 @@ function fetchData() {
 
 
 function createWindow() {
-    // fetchData()
-    Menu.setApplicationMenu(null)
+    // Menu.setApplicationMenu(null)
 
     win = new BrowserWindow({
         width: 800,
@@ -24,15 +23,12 @@ function createWindow() {
         icon: "icon.png"
     })
 
-
-    // console.log(process)
-    console.log(app)
     win.loadFile('splash.html')
-
-    // win.webContents.openDevTools()
-
+    win.webContents.openDevTools()
     win.on("ready", function () {
-
+        console.log(app)
+        console.log(app.getPath)
+        console.log(app.getPath())
     })
 
     win.on('closed', function () {
