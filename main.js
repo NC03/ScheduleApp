@@ -16,7 +16,8 @@ function fetchData()
 function createWindow() {
     win = new BrowserWindow({
         width: 800,
-        height: 600
+        height: 600,
+        icon:"icon.png"
     })
 
     console.log(process)
