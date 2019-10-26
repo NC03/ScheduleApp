@@ -7,12 +7,16 @@ let win
 var data
 
 function fetchData() {
-    fs.readFile("data.txt", (err, data) => {
+    console.log(path.join(app.getPath(), "data.txt"))
+    fs.readFile(path.join(app.getPath(), "data.txt"), (err, data) => {
         console.log(data)
     })
 }
 
+
 function createWindow() {
+    // fetchData()
+
     win = new BrowserWindow({
         width: 800,
         height: 600,
@@ -20,6 +24,7 @@ function createWindow() {
     })
 
     // console.log(process)
+    console.log(app)
     win.loadFile('splash.html')
 
     // win.webContents.openDevTools()
@@ -29,7 +34,6 @@ function createWindow() {
     })
 
     win.on('closed', function () {
-
         win = null
     })
 
@@ -48,3 +52,4 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     if (win === null) createWindow()
 })
+
