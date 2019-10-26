@@ -19,7 +19,7 @@ body {
     top: 0;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-areas: "a b . . . . . c"
+    grid-template-areas: "a a b b . . . c";
 }
 
 #topnav a {
