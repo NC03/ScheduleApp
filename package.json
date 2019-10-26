@@ -16,8 +16,10 @@
   "bugs": {
     "url": "https://github.com/NC03/ScheduleApp/issues"
   },
+  "build": {},
   "homepage": "https://github.com/NC03/ScheduleApp#readme",
   "devDependencies": {
-    "electron": "^7.0.0"
+    "electron": "^7.0.0",
+    "electron-builder": "^21.2.0"
   }
 }
