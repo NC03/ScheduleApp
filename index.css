@@ -3,6 +3,7 @@
     --color-icon-yellow: rgb(247, 175, 37);
     --color-icon-red: rgb(246, 84, 84);
     --color-background-blue: rgb(51, 64, 199);
+    --color-background-light-blue:rgb(240,240,255);
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     display: grid;
     grid-template-rows: 8% 92%;
     align-items: start;
+    background-color:var(--color-background-light-blue);
 }
 
 #topnav {
