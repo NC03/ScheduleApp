@@ -29,16 +29,52 @@
   </script>
 
   <div id="topnav">
-    <div onclick="page(1)" style="grid-area:a"><p>Week at a Glance</p></div>
-    <div onclick="page(2)" style="grid-area:b"><p>Due Tomorrow</p></div>
+    <div onclick="page(1)" style="grid-area:a">
+      <p>Week at a Glance</p>
+    </div>
+    <div onclick="page(2)" style="grid-area:b">
+      <p>Due Tomorrow</p>
+    </div>
     <div onclick="page(3)" style="grid-area:c"><img src="assets/newtab.png" alt="+"
         style="max-width:100%;max-height:100%"></div>
     <!--style="float:right;height:100%;padding:0;margin:0;"-->
   </div>
   <div style="margin-top: 8%;">
 
+    <script>
+      function refresh() {
+        document.getElementById("Test--container").innerHTML = "";
+        document.getElementById("Project--container").innerHTML = "";
+        document.getElementById("Event--container").innerHTML = "";
+
+        for (assignment of assignments) {
+          if(assignment.category != "Assignment"){
+            var em = document.createElement("DIV");
+            em.addEventListener("click", (arg) => {
+              console.log(arg)
+            })
+            em.innerHTML = assignment.category+": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
+            document.getElementById(assignment.category + "--container").appendChild(em);
+          }
+        }
+      }
+    </script>
+
     <div class="page">
-      <h1>Liam</h1>
+      <button onclick="refresh()">Refresh</button>
+      <h1>Week at a Glance</h1>
+      <h2>Tests</h2>
+      <div id="Test--container">
+
+      </div>
+      <h2>Projects</h2>
+      <div id="Project--container">
+
+      </div>
+      <h2>Events</h2>
+      <div id="Event--container">
+
+      </div>
     </div>
     <div class="page">
       <img src="assets/roxie.jpg" alt="dog" width="200px">
