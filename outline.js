@@ -20,75 +20,37 @@ class Course {
         this.times = t
     }
 
-    equals(b)
-    {
+    equals(b) {
         return this.title == b.title
     }
 }
 
 class Assignment {
-    statuses = ["NotDone","Starting","Complete"]
+    statuses = ["Incomplete", "InProgress", "Complete"]
+    categories = ["Assignment", "Test", "Exam", "Project"]
 
-    constructor(duedate,c,title) {
+    constructor(duedate, c, title, category) {
         this.course = c
         this.duedate = duedate
         this.title = title
         this.status = this.statuses[0]
+        this.category = category
     }
 
-    getStatus(){
-        return this.status
+    getCategory() {
+        return this.category
     }
-}
-class Test {
-    statuses = ["NotDone","Starting","Complete"]
-
-    constructor(duedate,c,title) {
-        this.course = c
-        this.duedate = duedate
-        this.title = title
-        this.status = this.statuses[0]
-    }
-
-    getStatus(){
-        return this.status
-    }
-}
-class Project {
-    statuses = ["NotDone","Starting","Complete"]
-
-    constructor(duedate,c,title) {
-        this.course = c
-        this.duedate = duedate
-        this.title = title
-        this.status = this.statuses[0]
-    }
-
-    getStatus(){
-        return this.status
-    }
-}
-class Event {
-    statuses = ["NotDone","Starting","Complete"]
-
-    constructor(duedate,c,title) {
-        this.course = c
-        this.duedate = duedate
-        this.title = title
-        this.status = this.statuses[0]
-    }
-
-    getStatus(){
+    getStatus() {
         return this.status
     }
 }
 
 
 var courses = [
-    new Course("AP Physics",[new Time(1,new Date(0,0,0,7,55,0,0),new Date(0,0,0,8,45,0,0))]),
-    new Course("US History",[new Time(1,new Date(0,0,0,8,55,0,0),new Date(0,0,0,9,45,0,0))]),
-    new Course("French 3",[new Time(1,new Date(0,0,0,10,30,0,0),new Date(0,0,0,11,20,0,0))]),
-    new Course("AP Chemistry",[new Time(1,new Date(0,0,0,11,30,0,0),new Date(0,0,0,12,20,0,0))]),
-    new Course("English 11",[new Time(1,new Date(0,0,0,1,05,0,0),new Date(0,0,0,1,55,0,0))]),
-    new Course("AP Calculus AB",[new Time(1,new Date(0,0,0,14,05,0,0),new Date(0,0,0,14,55,0,0))]),
+    new Course("AP Physics", [new Time(1, new Date(0, 0, 0, 7, 55, 0, 0), new Date(0, 0, 0, 8, 45, 0, 0))]),
+    new Course("US History", [new Time(1, new Date(0, 0, 0, 8, 55, 0, 0), new Date(0, 0, 0, 9, 45, 0, 0))]),
+    new Course("French 3", [new Time(1, new Date(0, 0, 0, 10, 30, 0, 0), new Date(0, 0, 0, 11, 20, 0, 0))]),
+    new Course("AP Chemistry", [new Time(1, new Date(0, 0, 0, 11, 30, 0, 0), new Date(0, 0, 0, 12, 20, 0, 0))]),
+    new Course("English 11", [new Time(1, new Date(0, 0, 0, 1, 05, 0, 0), new Date(0, 0, 0, 1, 55, 0, 0))]),
+    new Course("AP Calculus AB", [new Time(1, new Date(0, 0, 0, 14, 05, 0, 0), new Date(0, 0, 0, 14, 55, 0, 0))]),
 ]
