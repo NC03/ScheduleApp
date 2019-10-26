@@ -1,8 +1,17 @@
 const { app, BrowserWindow, Menu, MenuItem } = require('electron')
 const url = require('url')
 const path = require('path')
+const fs = require("fs")
 
 let win
+var data
+
+function fetchData()
+{
+    fs.readFile("data.txt", (err, data) => {
+        console.log(data)
+    })
+}
 
 function createWindow() {
     win = new BrowserWindow({
