@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "electron .",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,19 @@
   "bugs": {
     "url": "https://github.com/NC03/ScheduleApp/issues"
   },
-  "build": {},
+  "build": {
+    "appId": "com.ruhs.deadline",
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": [
+        "NSIS"
+      ]
+    }
+  },
   "homepage": "https://github.com/NC03/ScheduleApp#readme",
   "devDependencies": {
     "electron": "^7.0.0",
