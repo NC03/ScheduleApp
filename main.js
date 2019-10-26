@@ -1,20 +1,25 @@
-const { app, BrowserWindow } = require("electron")
+const { app, BrowserWindow, Menu, MenuItem } = require('electron')
+const url = require('url')
+const path = require('path')
 
 let win
 
 function createWindow() {
-    console.log(process)
-    win = new BrowserWindow({ width: 800, height: 600 })
-    win.loadFile("index.html")
+    win = new BrowserWindow({
+        width: 800,
+        height: 600
+    })
+    win.loadFile('index.html')
     win.webContents.openDevTools()
-
+    
     win.on('closed', function () {
-
         win = null
     })
 }
+app.on('window-all-closed', function () {
+    if (process.platform !== 'darwin') app.quit()
+})
 
 app.on('activate', function () {
-    if (win === null) createWindow()
+    if (mainWindow === null) createWindow()
 })
-app.on("start", createWindow)
