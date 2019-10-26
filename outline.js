@@ -22,10 +22,17 @@ class Course {
 }
 
 class Assignment {
+    statuses = ["NotDone","Starting","TurnedIn"]
 
-    constructor(duedate) {
+    constructor(duedate,c,title) {
         this.course = c
-        this.duedate = d
+        this.duedate = duedate
+        this.title = title
+        this.status = this.statuses[0]
+    }
+
+    getStatus(){
+        return this.status
     }
 }
 
