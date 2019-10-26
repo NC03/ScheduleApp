@@ -17,9 +17,9 @@
       console.log(num)
       for (var i = 0; i < document.getElementsByClassName("page").length; i++) {
         document.getElementsByClassName("page")[i].setAttribute("style", "display:none")
-        document.getElementById("topnav").getElementsByTagName("a")[i].classList.remove("active")
+        document.getElementById("topnav").getElementsByTagName("div")[i].classList.remove("active")
       }
-      document.getElementById("topnav").getElementsByTagName("a")[num - 1].classList.add("active")
+      document.getElementById("topnav").getElementsByTagName("div")[num - 1].classList.add("active")
       document.getElementsByClassName("page")[num - 1].setAttribute("style", "display:inherit")
 
     }
@@ -29,10 +29,10 @@
   </script>
 
   <div id="topnav">
-    <a onclick="page(1)" style="grid-area:a">Week at a Glance</a>
-    <a onclick="page(2)" style="grid-area:b">Due Tommorow</a>
-    <a onclick="page(3)" style="grid-area:c"><img src="assets/newtab.png" alt="+"
-        style="max-width:100%;max-height:100%"></a>
+    <div onclick="page(1)" style="grid-area:a"><p>Week at a Glance</p></div>
+    <div onclick="page(2)" style="grid-area:b"><p>Due Tomorrow</p></div>
+    <div onclick="page(3)" style="grid-area:c"><img src="assets/newtab.png" alt="+"
+        style="max-width:100%;max-height:100%"></div>
     <!--style="float:right;height:100%;padding:0;margin:0;"-->
   </div>
   <div style="margin-top: 8%;">
