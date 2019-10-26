@@ -24,7 +24,7 @@ function createWindow() {
     })
 
     win.loadFile('splash.html')
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
     win.on("ready", function () {
         console.log(app)
         console.log(app.getPath)

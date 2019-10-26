@@ -27,6 +27,7 @@ body {
     text-align: center;
     text-decoration: none;
     padding: auto;
+    vertical-align:middle;
 }
 
 #topnav a.active {
@@ -37,4 +38,8 @@ body {
 #topnav a:hover {
     background-color: #ddd;
     color: black;
+}
+
+div.page{
+    display:grid;
 }
