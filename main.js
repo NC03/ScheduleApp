@@ -38,21 +38,31 @@ function createWindow() {
     setTimeout(() => {
         win.loadFile("index.html")
     }, 1500)
+
 }
 
 
 app.on('ready', createWindow)
 
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') app.quit()
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
+    js.writeFile(path.join(app.getPath("userData"),"data.json"),JSON.stringify(assignments))
 })
 
 app.on('activate', function () {
     if (win === null) createWindow()
 })
 
-fs.readFile("test.txt","utf-8",(err,data)=>{
-    console.log(app.getPath())
-    console.log(data)
+fs.readFile(path.join(app.getPath("userData"),"data.json"),"utf-8",(err,data)=>{
+    if (err && data == null){
+
+    }else{
+        assignments = JSON.parse(data)
+        // win.webContents.on("did-finish-load",()=>{
+        //     win.webContents.executeJavaScript(`var assignments = ${data};`)
+        // })
+    }
 })
 

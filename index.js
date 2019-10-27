@@ -1,5 +1,20 @@
 var assignments = []
 
+
+function page(num) {
+    console.log(num)
+    for (var i = 0; i < 3; i++) {
+        document.getElementsByClassName("page")[i].setAttribute("style", "display:none")
+        document.getElementById("topnav").getElementsByTagName("div")[i].classList.remove("active")
+    }
+    document.getElementById("topnav").getElementsByTagName("div")[num - 1].classList.add("active")
+    document.getElementsByClassName("page")[num - 1].setAttribute("style", "display:inherit")
+
+}
+document.addEventListener("DOMContentLoaded", () => {
+    page(1)
+})
+
 function createBtn(assignment) {
     var d = document.createElement("BUTTON");
     d.innerHTML = "&#x2261;";
