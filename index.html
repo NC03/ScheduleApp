@@ -15,7 +15,7 @@
   <script>
     function page(num) {
       console.log(num)
-      for (var i = 0; i < document.getElementsByClassName("page").length; i++) {
+      for (var i = 0; i < 3; i++) {
         document.getElementsByClassName("page")[i].setAttribute("style", "display:none")
         document.getElementById("topnav").getElementsByTagName("div")[i].classList.remove("active")
       }
@@ -42,6 +42,16 @@
   <div style="margin-top: 8%;">
 
     <script>
+      function createBtn(assignment) {
+        var d = document.createElement("BUTTON");
+        d.innerHTML = "&#x2261;";
+        d.addEventListener("click", function () {
+
+          populate(assignment)
+        })
+        return d
+      }
+
       function refresh() {
         document.getElementById("Test--container").innerHTML = "";
         document.querySelector("#Project--container").innerHTML = "";
@@ -54,8 +64,8 @@
               console.log(arg)
             })
             em.innerHTML = assignment.category + ": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
-            var d = document.createElement("BUTTON");
 
+            em.appendChild(createBtn(assignment));
             document.getElementById(assignment.category + "--container").appendChild(em);
           }
         }
@@ -63,8 +73,7 @@
     </script>
 
     <div class="page">
-      <button onclick="refresh()">Refresh</button>
-      <h1>Week at a Glance</h1>
+      <button onclick="refresh()"> &#x21bb;</button>
       <h2>Tests</h2>
       <div id="Test--container">
 
@@ -95,6 +104,9 @@
       </select>
 
       <button id="submit">Submit</button>
+    </div>
+    <div class="page">
+
     </div>
   </div>
 </body>
