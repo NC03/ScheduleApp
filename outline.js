@@ -27,7 +27,7 @@ class Course {
 
 class Assignment {
     statuses = ["Incomplete", "InProgress", "Complete"]
-    categories = ["Assignment", "Test", "Event", "Project"]
+    categories = [ "Test", "Event", "Project"]//"Assignment"
 
     constructor(duedate, c, title, category) {
         this.course = c
