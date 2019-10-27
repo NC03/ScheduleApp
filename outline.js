@@ -51,6 +51,6 @@ var courses = [
     new Course("US History", [new Time(1, new Date(0, 0, 0, 8, 55, 0, 0), new Date(0, 0, 0, 9, 45, 0, 0))]),
     new Course("French 3", [new Time(1, new Date(0, 0, 0, 10, 30, 0, 0), new Date(0, 0, 0, 11, 20, 0, 0))]),
     new Course("AP Chemistry", [new Time(1, new Date(0, 0, 0, 11, 30, 0, 0), new Date(0, 0, 0, 12, 20, 0, 0))]),
-    new Course("English 11", [new Time(1, new Date(0, 0, 0, 1, 05, 0, 0), new Date(0, 0, 0, 1, 55, 0, 0))]),
+    new Course("English 11", [new Time(1, new Date(0, 0, 0, 13, 05, 0, 0), new Date(0, 0, 0, 13, 55, 0, 0))]),
     new Course("AP Calculus AB", [new Time(1, new Date(0, 0, 0, 14, 05, 0, 0), new Date(0, 0, 0, 14, 55, 0, 0))]),
 ]
