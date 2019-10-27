@@ -1,5 +1,34 @@
 var assignments = []
 
+function createBtn(assignment) {
+    var d = document.createElement("BUTTON");
+    d.innerHTML = "&#x2261;";
+    d.addEventListener("click", function () {
+
+        populate(assignment)
+    })
+    return d
+}
+
+function refresh() {
+    document.getElementById("Test--container").innerHTML = "";
+    document.querySelector("#Project--container").innerHTML = "";
+    document.getElementById("Event--container").innerHTML = "";
+
+    for (assignment of assignments) {
+        if (assignment.category != "Assignment") {
+            var em = document.createElement("DIV");
+            em.addEventListener("click", (arg) => {
+                console.log(arg)
+            })
+            em.innerHTML = assignment.category + ": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
+
+            em.appendChild(createBtn(assignment));
+            document.getElementById(assignment.category + "--container").appendChild(em);
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     var inner = ""
     var count = 1
@@ -11,23 +40,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     inner = ""
     count = 1
-    for(category of new Assignment().categories)
-    {
+    for (category of new Assignment().categories) {
         inner += `<option value=\"${count}\">${category}</option>`
         count++
     }
     document.getElementById("category").innerHTML = inner
 
 
-    document.getElementById("submit").addEventListener("click",() =>{
+    document.getElementById("submit").addEventListener("click", () => {
         var course = courses[document.getElementById("select").selectedIndex]
         var title = document.getElementById("text").value
         var category = new Assignment().categories[document.getElementById("category").selectedIndex]
+        var arr = document.getElementById("date__input").value.split("-");
+        console.log(document.getElementById("date__input").value)
+        console.log(arr)
         var date = new Date(document.getElementById("date__input").value)
-        var assignment = new Assignment(date,course,title,category)
+        var assignment = new Assignment(date, course, title, category)
         console.log(date)
         console.log(document.getElementById("date__input").value)
         assignments.push(assignment)
+        refresh()
         console.log(assignments)
     })
 })

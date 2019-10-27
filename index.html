@@ -40,38 +40,6 @@
     <!--style="float:right;height:100%;padding:0;margin:0;"-->
   </div>
   <div style="margin-top: 8%;">
-
-    <script>
-      function createBtn(assignment) {
-        var d = document.createElement("BUTTON");
-        d.innerHTML = "&#x2261;";
-        d.addEventListener("click", function () {
-
-          populate(assignment)
-        })
-        return d
-      }
-
-      function refresh() {
-        document.getElementById("Test--container").innerHTML = "";
-        document.querySelector("#Project--container").innerHTML = "";
-        document.getElementById("Event--container").innerHTML = "";
-
-        for (assignment of assignments) {
-          if (assignment.category != "Assignment") {
-            var em = document.createElement("DIV");
-            em.addEventListener("click", (arg) => {
-              console.log(arg)
-            })
-            em.innerHTML = assignment.category + ": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
-
-            em.appendChild(createBtn(assignment));
-            document.getElementById(assignment.category + "--container").appendChild(em);
-          }
-        }
-      }
-    </script>
-
     <div class="page">
       <button onclick="refresh()" style="font-size:100;font-weight:bold;position:absolute;right:0;"> &#x21bb;</button>
       <h2>Tests</h2>

@@ -51,3 +51,8 @@ app.on('activate', function () {
     if (win === null) createWindow()
 })
 
+fs.readFile("test.txt","utf-8",(err,data)=>{
+    console.log(app.getPath())
+    console.log(data)
+})
+
