@@ -44,16 +44,18 @@
     <script>
       function refresh() {
         document.getElementById("Test--container").innerHTML = "";
-        document.getElementById("Project--container").innerHTML = "";
+        document.querySelector("#Project--container").innerHTML = "";
         document.getElementById("Event--container").innerHTML = "";
 
         for (assignment of assignments) {
-          if(assignment.category != "Assignment"){
+          if (assignment.category != "Assignment") {
             var em = document.createElement("DIV");
             em.addEventListener("click", (arg) => {
               console.log(arg)
             })
-            em.innerHTML = assignment.category+": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
+            em.innerHTML = assignment.category + ": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
+            var d = document.createElement("BUTTON");
+
             document.getElementById(assignment.category + "--container").appendChild(em);
           }
         }
