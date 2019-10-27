@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function save(){
-    
+    fs.writeFile(path.join(app.getPath("userData"), "data.json"),parse(assignments))
 }
 
 function parse(str){
@@ -51,9 +51,6 @@ function getIdx(c)
     }
 }
 
-function save() {
-    s.writeFile(path.join(app.getPath("userData"), "data.json"), JSON.stringify(assignments))
-}
 
 
 function page(num) {
