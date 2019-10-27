@@ -4,14 +4,6 @@ const path = require('path')
 const fs = require("fs")
 
 let win
-var data
-
-function fetchData() {
-    console.log(path.join(app.getPath(), "data.txt"))
-    fs.readFile(path.join(app.getPath(), "data.txt"), (err, data) => {
-        console.log(data)
-    })
-}
 
 
 function createWindow() {
@@ -43,7 +35,7 @@ function createWindow() {
     }, 1500)
 
     win.webContents.on("did-finish-load",()=>{
-        win.webContents.executeJavaScript(`var path = ${app.getPath("userData")}\n`)
+        win.webContents.executeJavaScript(`var pathInput = ${app.getPath("userData")}\n`)
     })
 
 }

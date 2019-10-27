@@ -13,16 +13,6 @@
 </head>
 
 <body>
-  <script>
-    console.log(process)
-    fs.readFile(path.join(app.getPath("userData"), "data.json"), "utf-8", (err, data) => {
-      if (err && data == null) {
-      } else {
-        assignments = JSON.parse(data)
-      }
-    })
-  </script>
-
   <div id="topnav">
     <div onclick="page(1)" style="grid-area:a">
       <p>Week at a Glance</p>
