@@ -21,7 +21,21 @@ function refresh() {
             em.addEventListener("click", (arg) => {
                 console.log(arg)
             })
-            em.innerHTML = assignment.category + ": " + assignment.title + " in " + assignment.course.title + " on " + assignment.duedate.getMonth() + assignment.duedate.getDate();
+            var months = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "July",
+                "Aug",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dec"
+            ]
+            em.innerHTML = assignment.category + ": " + assignment.title + " in " + assignment.course.title + " on " + months[assignment.duedate.getMonth()] + " " + (assignment.duedate.getDate() + 1);
 
             em.appendChild(createBtn(assignment));
             document.getElementById(assignment.category + "--container").appendChild(em);
