@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 })
 
-function save()
+function save(){
+    
+}
 
 function parse(str){
     d = JSON.parse(str).assignments
