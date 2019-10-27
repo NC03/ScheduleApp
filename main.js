@@ -18,6 +18,9 @@ function createWindow() {
     // Menu.setApplicationMenu(null)
 
     win = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
         width: 800,
         height: 600,
         icon: "icon.png"
@@ -39,8 +42,11 @@ function createWindow() {
         win.loadFile("index.html")
     }, 1500)
 
-}
+    win.webContents.on("did-finish-load",()=>{
+        win.webContents.executeJavaScript(`var path = ${app.getPath("userData")}\n`)
+    })
 
+}
 
 app.on('ready', createWindow)
 
@@ -48,21 +54,8 @@ app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
         app.quit()
     }
-    js.writeFile(path.join(app.getPath("userData"),"data.json"),JSON.stringify(assignments))
 })
 
 app.on('activate', function () {
     if (win === null) createWindow()
 })
-
-fs.readFile(path.join(app.getPath("userData"),"data.json"),"utf-8",(err,data)=>{
-    if (err && data == null){
-
-    }else{
-        assignments = JSON.parse(data)
-        // win.webContents.on("did-finish-load",()=>{
-        //     win.webContents.executeJavaScript(`var assignments = ${data};`)
-        // })
-    }
-})
-

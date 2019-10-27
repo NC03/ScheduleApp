@@ -1,5 +1,24 @@
 var assignments = []
 
+const fs = require("fs")
+const path = require("path")
+
+document.addEventListener("DOMContentLoaded", () => {
+    page(1)
+    fs.readFile(path.join(app.getPath("userData"), "data.json"), "utf-8", (err, data) => {
+        if (err && data == null) {
+
+        } else {
+            assignments = JSON.parse(data)
+            refresh()
+        }
+    })
+})
+
+function save() {
+    s.writeFile(path.join(app.getPath("userData"), "data.json"), JSON.stringify(assignments))
+}
+
 
 function page(num) {
     console.log(num)
@@ -11,9 +30,7 @@ function page(num) {
     document.getElementsByClassName("page")[num - 1].setAttribute("style", "display:inherit")
 
 }
-document.addEventListener("DOMContentLoaded", () => {
-    page(1)
-})
+
 
 function createBtn(assignment) {
     var d = document.createElement("BUTTON");
