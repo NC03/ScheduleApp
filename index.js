@@ -1,5 +1,58 @@
 var assignments = []
 
+const fs = require("fs")
+const path = require("path")
+const { app } = require('electron').remote
+
+document.addEventListener("DOMContentLoaded", () => {
+    page(1)
+    fs.readFile(path.join(app.getPath("userData"), "data.json"), "utf-8", (err, data) => {
+        if(err && data == null)
+        {
+
+        }else{
+            parse(data)
+        }
+    })
+})
+
+function save()
+
+function parse(str){
+    d = JSON.parse(str).assignments
+    for(assignment of d)
+    {
+        assignments.push(new Assignment(new Date(assignment[0]), courses[assignment[1]], assignment[2], assignment[3]))
+    }
+}
+
+function unparse()
+{
+    obj = {}
+    o = []
+    for(assignment of assignments){
+        o.push([assignment.duedate.toUTCString(),getIdx(assignment.c),assignment.title,assignment.category])
+    }
+    obj.assignments = o
+    return JSON.stringify(obj)
+}
+function getIdx(c)
+{
+    var count = 0
+    for(course of courses)
+    {
+        if(course.title == c.title)
+        {
+            return count
+        }
+        count++
+    }
+}
+
+function save() {
+    s.writeFile(path.join(app.getPath("userData"), "data.json"), JSON.stringify(assignments))
+}
+
 
 function page(num) {
     console.log(num)
@@ -11,9 +64,7 @@ function page(num) {
     document.getElementsByClassName("page")[num - 1].setAttribute("style", "display:inherit")
 
 }
-document.addEventListener("DOMContentLoaded", () => {
-    page(1)
-})
+
 
 function createBtn(assignment) {
     var d = document.createElement("BUTTON");
