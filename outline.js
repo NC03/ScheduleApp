@@ -47,10 +47,10 @@ class Assignment {
 
 
 var courses = [
-    new Course("AP Physics", [new Time(1, new Date(0, 0, 0, 7, 55, 0, 0), new Date(0, 0, 0, 8, 45, 0, 0))]),
-    new Course("US History", [new Time(1, new Date(0, 0, 0, 8, 55, 0, 0), new Date(0, 0, 0, 9, 45, 0, 0))]),
-    new Course("French 3", [new Time(1, new Date(0, 0, 0, 10, 30, 0, 0), new Date(0, 0, 0, 11, 20, 0, 0))]),
-    new Course("AP Chemistry", [new Time(1, new Date(0, 0, 0, 11, 30, 0, 0), new Date(0, 0, 0, 12, 20, 0, 0))]),
-    new Course("English 11", [new Time(1, new Date(0, 0, 0, 13, 05, 0, 0), new Date(0, 0, 0, 13, 55, 0, 0))]),
-    new Course("AP Calculus AB", [new Time(1, new Date(0, 0, 0, 14, 05, 0, 0), new Date(0, 0, 0, 14, 55, 0, 0))])
+    new Course("Period 1", [new Time(1, new Date(0, 0, 0, 7, 55, 0, 0), new Date(0, 0, 0, 8, 45, 0, 0))]),
+    new Course("Period 2", [new Time(1, new Date(0, 0, 0, 8, 55, 0, 0), new Date(0, 0, 0, 9, 45, 0, 0))]),
+    new Course("Period 3", [new Time(1, new Date(0, 0, 0, 10, 30, 0, 0), new Date(0, 0, 0, 11, 20, 0, 0))]),
+    new Course("Period 4", [new Time(1, new Date(0, 0, 0, 11, 30, 0, 0), new Date(0, 0, 0, 12, 20, 0, 0))]),
+    new Course("Period 5", [new Time(1, new Date(0, 0, 0, 13, 05, 0, 0), new Date(0, 0, 0, 13, 55, 0, 0))]),
+    new Course("Period 6", [new Time(1, new Date(0, 0, 0, 14, 05, 0, 0), new Date(0, 0, 0, 14, 55, 0, 0))])
 ]

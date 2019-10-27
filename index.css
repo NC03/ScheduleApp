@@ -55,3 +55,10 @@ div.page h2 {
     font-weight:100;
     
 }
+
+#stress{
+    background-color:red;padding:20px;color:black;font-weight:bold;
+}
+#stress:active{
+    background-color:#ffdddd;
+}

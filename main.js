@@ -7,7 +7,7 @@ let win
 
 
 function createWindow() {
-    // Menu.setApplicationMenu(null)
+    Menu.setApplicationMenu(null)
 
     win = new BrowserWindow({
         webPreferences: {
