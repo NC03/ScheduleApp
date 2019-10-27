@@ -46,6 +46,11 @@ div.page{
     font-family:Helvetica, Arial, sans-serif;
 }
 
+div.page button{
+    background-color:rgba(0,0,0,0);
+    border:0pt black;
+}
+
 div.page h2 {
     font-weight:100;
 
