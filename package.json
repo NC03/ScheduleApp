@@ -18,7 +18,7 @@
     "url": "https://github.com/NC03/ScheduleApp/issues"
   },
   "build": {
-    "appId": "com.ruhs.deadline",
+    "appId": "com.red.deadline",
     "linux": {
       "target": [
         "AppImage"
